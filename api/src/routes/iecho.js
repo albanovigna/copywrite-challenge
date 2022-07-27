@@ -1,16 +1,16 @@
 const { Router } = require("express");
 const router = Router();
-
-function reverseString(string) {
-  return string.split("").reverse().join("");
-}
+const { reverseString, isPalindrome } = require("../utils");
 
 router.get("/", (req, res) => {
   const { text } = req.query;
   try {
     if (text) {
-      const result = reverseString(text);
-      res.status(200).json({ text: result });
+      const obj = {
+        text: reverseString(text),
+        palindrome: isPalindrome(text),
+      };
+      res.status(200).json(obj);
     } else {
       res.status(400).json({ error: "no text" });
     }
