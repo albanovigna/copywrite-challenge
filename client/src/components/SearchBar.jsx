@@ -67,7 +67,9 @@ export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="absolute">
-        <Toolbar sx={{ justifyContent: "center", gap: 5 }}>
+        <Toolbar
+          sx={{ justifyContent: "center", gap: 5, backgroundColor: "#d90429" }}
+        >
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -80,7 +82,14 @@ export default function SearchAppBar() {
             />
           </Search>
           <Button
-            sx={{ marginTop: "10px", marginBottom: "10px", background: "red" }}
+            sx={{
+              marginTop: "10px",
+              marginBottom: "10px",
+              background: "#8338ec",
+              "&:hover": {
+                background: "#8338ec",
+              },
+            }}
             onClick={(e) => handleSubmit(e)}
             variant="contained"
             component="span"
